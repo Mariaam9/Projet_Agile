@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Tableau de bord')}"></head><body>
+<header th:replace="~{fragments/layout :: navigation}"></header>
+<div th:replace="~{fragments/layout :: flash}"></div>
+<main class="container">
+ <div class="hero mb-4"><div class="eyebrow">PLATEFORME INTERNE</div><h1>Réservez vos salles, sans conflits.</h1>
+  <p class="lead text-secondary">Consultez les disponibilités et gérez les réservations en quelques clics.</p>
+  <a class="btn btn-dark" th:href="@{/reservations/nouvelle}">+ Nouvelle réservation</a>
+  <a class="btn btn-outline-dark ms-2" th:href="@{/disponibilites}">Trouver une salle</a>
+ </div>
+ <div class="row g-3 mb-4"><div class="col-md-4"><div class="stat-card"><div>Salles</div><strong th:text="${nbSalles}">0</strong></div></div>
+ <div class="col-md-4"><div class="stat-card"><div>Employés</div><strong th:text="${nbEmployes}">0</strong></div></div>
+ <div class="col-md-4"><div class="stat-card"><div>Réservations confirmées</div><strong th:text="${nbReservations}">0</strong></div></div></div>
+ <section class="panel"><div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3"><h2 class="h4 m-0">Dernières réservations</h2><a th:href="@{/reservations}" class="simple-link">Toutes les réservations</a></div>
+ <div class="table-responsive"><table class="table align-middle"><thead><tr><th>Salle</th><th>Employé</th><th>Début</th><th>Statut</th></tr></thead>
+ <tbody><tr th:each="r : ${reservations}"><td th:text="${r.creneau.salle.nom}"></td><td th:text="${r.employe.nom}"></td>
+ <td th:text="${#temporals.format(r.creneau.dateDebut, 'dd/MM/yyyy HH:mm')}"></td>
+ <td><span class="pill" th:text="${r.statut}"></span></td></tr><tr th:if="${#lists.isEmpty(reservations)}"><td colspan="4">Aucune réservation enregistrée.</td></tr></tbody></table></div>
+ </section>
+</main><footer th:replace="~{fragments/layout :: footer}"></footer></body></html>

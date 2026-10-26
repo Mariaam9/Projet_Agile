@@ -1,0 +1,360 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-26T21:18:00.000Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="reservation_fix_1" name="01 - Diagramme métier UML">
+    <mxGraphModel dx="1780" dy="870" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1140" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="p1_title" value="Projet 4 — Gestionnaire de réservation de salles" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=28;fontStyle=1;fontColor=#111111;align=left;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="75" y="30" width="1160" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_subtitle" value="Analyse orientée objet (OOA) — classes et relations métier" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=18;fontStyle=0;fontColor=#111111;align=left;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="75" y="82" width="1100" height="31" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_employe_creneau" value="" style="edgeStyle=none;html=1;rounded=0;strokeWidth=1.7;strokeColor=#111111;startArrow=none;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="280" as="sourcePoint"/>
+            <mxPoint x="735" y="280" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1_assoc_reservation" value="" style="edgeStyle=none;html=1;rounded=0;strokeWidth=1.7;strokeColor=#111111;dashed=1;dashPattern=6 5;startArrow=none;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="596" y="280" as="sourcePoint"/>
+            <mxPoint x="596" y="540" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1_creneau_salle" value="" style="edgeStyle=none;html=1;rounded=0;strokeWidth=1.7;strokeColor=#111111;startArrow=none;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1115" y="280" as="sourcePoint"/>
+            <mxPoint x="1340" y="280" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1_responsable_salle" value="" style="edgeStyle=none;html=1;rounded=0;strokeWidth=1.7;strokeColor=#111111;startArrow=none;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1418" y="600" as="sourcePoint"/>
+            <mxPoint x="1570" y="432" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="1418" y="520"/>
+              <mxPoint x="1570" y="520"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1_employe" value="Employé" style="swimlane;html=1;startSize=40;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="80" y="160" width="380" height="240" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_employe_attrs" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;- id : Long&lt;br&gt;- nom : String&lt;br&gt;- email : String&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p1_employe">
+          <mxGeometry x="12" y="49" width="356" height="89" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_employe_div" value="" style="shape=rect;strokeColor=none;fillColor=#111111;" vertex="1" parent="p1_employe">
+          <mxGeometry x="0" y="140" width="380" height="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_employe_ops" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;+ demanderReservation(creneau)&lt;br&gt;+ annulerReservation(id)&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p1_employe">
+          <mxGeometry x="12" y="149" width="356" height="63" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_creneau" value="Créneau" style="swimlane;html=1;startSize=40;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="735" y="160" width="380" height="240" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_creneau_attrs" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;- id : Long&lt;br&gt;- dateDebut : LocalDateTime&lt;br&gt;- dateFin : LocalDateTime&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p1_creneau">
+          <mxGeometry x="12" y="49" width="356" height="89" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_creneau_div" value="" style="shape=rect;strokeColor=none;fillColor=#111111;" vertex="1" parent="p1_creneau">
+          <mxGeometry x="0" y="140" width="380" height="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_creneau_ops" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;+ chevauche(autre : Créneau) : boolean&lt;br&gt;+ estValide() : boolean&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p1_creneau">
+          <mxGeometry x="12" y="149" width="356" height="63" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_salle" value="Salle" style="swimlane;html=1;startSize=40;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="160" width="470" height="272" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_salle_attrs" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;- id : Long&lt;br&gt;- nom : String&lt;br&gt;- capacite : int&lt;br&gt;- localisation : String&lt;br&gt;- statut : StatutSalle&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p1_salle">
+          <mxGeometry x="12" y="49" width="446" height="143" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_salle_div" value="" style="shape=rect;strokeColor=none;fillColor=#111111;" vertex="1" parent="p1_salle">
+          <mxGeometry x="0" y="194" width="470" height="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_salle_ops" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;+ estUtilisable() : boolean&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p1_salle">
+          <mxGeometry x="12" y="203" width="446" height="36" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_reservation" value="&lt;div style=&quot;font-size:13px;font-weight:normal;font-style:italic;&quot;&gt;« classe d’association »&lt;/div&gt;&lt;b&gt;Réservation&lt;/b&gt;" style="swimlane;html=1;startSize=55;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="355" y="540" width="510" height="310" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_reservation_attrs" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;- id : Long&lt;br&gt;- objet : String&lt;br&gt;- nombreParticipants : int&lt;br&gt;- statut : StatutReservation&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p1_reservation">
+          <mxGeometry x="12" y="64" width="486" height="116" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_reservation_div" value="" style="shape=rect;strokeColor=none;fillColor=#111111;" vertex="1" parent="p1_reservation">
+          <mxGeometry x="0" y="182" width="510" height="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_reservation_ops" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;+ confirmer() : void&lt;br&gt;+ annuler() : void&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p1_reservation">
+          <mxGeometry x="12" y="191" width="486" height="63" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_responsable" value="Responsable" style="swimlane;html=1;startSize=40;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="600" width="475" height="235" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_responsable_attrs" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;- id : Long&lt;br&gt;- nom : String&lt;br&gt;- email : String&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p1_responsable">
+          <mxGeometry x="12" y="49" width="451" height="89" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_responsable_div" value="" style="shape=rect;strokeColor=none;fillColor=#111111;" vertex="1" parent="p1_responsable">
+          <mxGeometry x="0" y="140" width="475" height="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_responsable_ops" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;+ gererSalles() : void&lt;br&gt;+ consulterStatistiques() : void&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p1_responsable">
+          <mxGeometry x="12" y="149" width="451" height="63" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_admin" value="&lt;div style=&quot;font-size:13px;font-weight:normal;font-style:italic;&quot;&gt;« classe isolée »&lt;/div&gt;&lt;b&gt;Administrateur&lt;/b&gt;" style="swimlane;html=1;startSize=55;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="60" y="905" width="385" height="185" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_admin_attrs" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;- id : Long&lt;br&gt;- nom : String&lt;br&gt;- email : String&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p1_admin">
+          <mxGeometry x="12" y="64" width="361" height="89" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_sreserve" value="&lt;div style=&quot;font-size:13px;font-weight:normal;font-style:italic;&quot;&gt;« enumeration »&lt;/div&gt;&lt;b&gt;StatutReservation&lt;/b&gt;" style="swimlane;html=1;startSize=55;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="935" width="325" height="155" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_sreserve_attrs" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;EN_ATTENTE&lt;br&gt;CONFIRMEE&lt;br&gt;ANNULEE&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p1_sreserve">
+          <mxGeometry x="12" y="64" width="301" height="89" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_ssalle" value="&lt;div style=&quot;font-size:13px;font-weight:normal;font-style:italic;&quot;&gt;« enumeration »&lt;/div&gt;&lt;b&gt;StatutSalle&lt;/b&gt;" style="swimlane;html=1;startSize=55;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1450" y="935" width="335" height="155" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_ssalle_attrs" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;ACTIVE&lt;br&gt;HORS_SERVICE&lt;br&gt;MAINTENANCE&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=16;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p1_ssalle">
+          <mxGeometry x="12" y="64" width="311" height="89" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_label_reserve" value="réserve" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#111111;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="540" y="249" width="120" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_user_multi" value="0..1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#111111;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="462" y="298" width="55" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_slot_multi" value="0..*" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#111111;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="685" y="298" width="55" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_creneau_multi" value="0..*" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#111111;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1117" y="297" width="55" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_salle_multi" value="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#111111;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1314" y="296" width="22" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_label_room" value="appartient à" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#111111;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="250" width="140" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_resp_multi" value="0..*" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#111111;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1395" y="562" width="65" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_manage_label" value="gère / suit" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#111111;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1460" y="488" width="140" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_room_man_multi" value="0..*" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=15;fontStyle=0;fontColor=#111111;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1577" y="445" width="75" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_note0" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#111111;fillColor=#FFFFFF;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="475" y="910" width="535" height="197" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_notehead0" value="Contraintes et choix de modélisation" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=17;fontStyle=1;fontColor=#111111;align=left;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="489" y="919" width="507" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_noteline0_0" value="• Une réservation associe un employé à un créneau identifié." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=14.5;fontStyle=0;fontColor=#111111;align=left;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="489" y="953" width="507" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_noteline0_1" value="• Chaque créneau est affecté à une seule salle." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=14.5;fontStyle=0;fontColor=#111111;align=left;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="489" y="981" width="507" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_noteline0_2" value="• dateDebut &amp;lt; dateFin ; nombreParticipants ≤ capacité." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=14.5;fontStyle=0;fontColor=#111111;align=left;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="489" y="1009" width="507" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_noteline0_3" value="• Aucun chevauchement de réservations confirmées dans une salle." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=14.5;fontStyle=0;fontColor=#111111;align=left;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="489" y="1037" width="507" height="27" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1_noteline0_4" value="• Calendrier et statistiques : informations calculées, pas classes métier." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=14.5;fontStyle=0;fontColor=#111111;align=left;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="489" y="1065" width="507" height="27" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="reservation_fix_2" name="02 - Conception services OOD">
+    <mxGraphModel dx="1780" dy="870" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1420" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="p2_title" value="Projet 4 — Gestionnaire de réservation de salles" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=28;fontStyle=1;fontColor=#111111;align=left;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="75" y="30" width="1160" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_subtitle" value="Conception orientée objet (OOD) — services et accès aux données" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=18;fontStyle=0;fontColor=#111111;align=left;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="75" y="82" width="1100" height="31" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_dep_res_dispo" value="" style="edgeStyle=none;html=1;rounded=0;strokeWidth=1.7;strokeColor=#111111;dashed=1;dashPattern=6 5;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="625" y="455" as="sourcePoint"/>
+            <mxPoint x="725" y="455" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p2_dep_res_repo" value="" style="edgeStyle=none;html=1;rounded=0;strokeWidth=1.7;strokeColor=#111111;dashed=1;dashPattern=6 5;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="355" y="525" as="sourcePoint"/>
+            <mxPoint x="485" y="1120" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="355" y="638"/>
+              <mxPoint x="660" y="638"/>
+              <mxPoint x="660" y="1055"/>
+              <mxPoint x="485" y="1055"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p2_dep_dispo_resrepo" value="" style="edgeStyle=none;html=1;rounded=0;strokeWidth=1.7;strokeColor=#111111;dashed=1;dashPattern=6 5;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="940" y="495" as="sourcePoint"/>
+            <mxPoint x="660" y="1120" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="940" y="615"/>
+              <mxPoint x="660" y="615"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p2_dep_dispo_sallerepo" value="" style="edgeStyle=none;html=1;rounded=0;strokeWidth=1.7;strokeColor=#111111;dashed=1;dashPattern=6 5;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1090" y="495" as="sourcePoint"/>
+            <mxPoint x="1285" y="1120" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="1090" y="645"/>
+              <mxPoint x="1285" y="645"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p2_dep_salle_sallerepo" value="" style="edgeStyle=none;html=1;rounded=0;strokeWidth=1.7;strokeColor=#111111;dashed=1;dashPattern=6 5;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1760" y="450" as="sourcePoint"/>
+            <mxPoint x="1550" y="1120" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="1883" y="450"/>
+              <mxPoint x="1883" y="1040"/>
+              <mxPoint x="1550" y="1040"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p2_dep_cal_resrepo" value="" style="edgeStyle=none;html=1;rounded=0;strokeWidth=1.7;strokeColor=#111111;dashed=1;dashPattern=6 5;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="410" y="955" as="sourcePoint"/>
+            <mxPoint x="410" y="1120" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p2_dep_stat_resrepo" value="" style="edgeStyle=none;html=1;rounded=0;strokeWidth=1.7;strokeColor=#111111;dashed=1;dashPattern=6 5;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="930" y="963" as="sourcePoint"/>
+            <mxPoint x="810" y="1120" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="930" y="1060"/>
+              <mxPoint x="810" y="1060"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p2_dep_stat_sallerepo" value="" style="edgeStyle=none;html=1;rounded=0;strokeWidth=1.7;strokeColor=#111111;dashed=1;dashPattern=6 5;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1120" y="963" as="sourcePoint"/>
+            <mxPoint x="1410" y="1120" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="1120" y="1060"/>
+              <mxPoint x="1410" y="1060"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p2_dep_res_politique" value="" style="edgeStyle=none;html=1;rounded=0;strokeWidth=1.7;strokeColor=#111111;dashed=1;dashPattern=6 5;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="525" as="sourcePoint"/>
+            <mxPoint x="1630" y="700" as="targetPoint"/>
+            <Array as="points">
+              <mxPoint x="590" y="580"/>
+              <mxPoint x="1630" y="580"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p2_res_service" value="ReservationService" style="swimlane;html=1;startSize=40;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="75" y="160" width="550" height="365" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_res_service_attrs" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;- reservations : ReservationRepository&lt;br&gt;- disponibilites : DisponibiliteService&lt;br&gt;- regles : PolitiqueReservation&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=15;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p2_res_service">
+          <mxGeometry x="12" y="49" width="526" height="89" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_res_service_div" value="" style="shape=rect;strokeColor=none;fillColor=#111111;" vertex="1" parent="p2_res_service">
+          <mxGeometry x="0" y="140" width="550" height="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_res_service_ops" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;+ creer(employeId, creneauId, objet, nb) : Reservation&lt;br&gt;+ modifier(id, creneauId, objet, nb) : Reservation&lt;br&gt;+ confirmer(id) : void&lt;br&gt;+ annuler(id) : void&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=15;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p2_res_service">
+          <mxGeometry x="12" y="149" width="526" height="117" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_dispo_service" value="DisponibiliteService" style="swimlane;html=1;startSize=40;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="725" y="160" width="505" height="335" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_dispo_service_attrs" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;- salles : SalleRepository&lt;br&gt;- reservations : ReservationRepository&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=15;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p2_dispo_service">
+          <mxGeometry x="12" y="49" width="481" height="62" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_dispo_service_div" value="" style="shape=rect;strokeColor=none;fillColor=#111111;" vertex="1" parent="p2_dispo_service">
+          <mxGeometry x="0" y="113" width="505" height="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_dispo_service_ops" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;+ chercherSallesLibres(debut, fin) : List&amp;lt;Salle&amp;gt;&lt;br&gt;+ estDisponible(salleId, debut, fin) : boolean&lt;br&gt;+ verifierSansChevauchement(...) : boolean&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=15;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p2_dispo_service">
+          <mxGeometry x="12" y="122" width="481" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_salle_service" value="GestionSalleService" style="swimlane;html=1;startSize=40;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1350" y="160" width="510" height="290" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_salle_service_attrs" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;- salles : SalleRepository&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=15;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p2_salle_service">
+          <mxGeometry x="12" y="49" width="486" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_salle_service_div" value="" style="shape=rect;strokeColor=none;fillColor=#111111;" vertex="1" parent="p2_salle_service">
+          <mxGeometry x="0" y="86" width="510" height="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_salle_service_ops" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;+ creerSalle(salle : Salle) : Salle&lt;br&gt;+ modifierSalle(salle : Salle) : Salle&lt;br&gt;+ desactiverSalle(id : Long) : void&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=15;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p2_salle_service">
+          <mxGeometry x="12" y="95" width="486" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_cal_service" value="CalendrierService" style="swimlane;html=1;startSize=40;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="85" y="700" width="500" height="255" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_cal_service_attrs" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;- reservations : ReservationRepository&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=15;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p2_cal_service">
+          <mxGeometry x="12" y="49" width="476" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_cal_service_div" value="" style="shape=rect;strokeColor=none;fillColor=#111111;" vertex="1" parent="p2_cal_service">
+          <mxGeometry x="0" y="86" width="500" height="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_cal_service_ops" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;+ afficherCalendrier(debut, fin) : List&amp;lt;Reservation&amp;gt;&lt;br&gt;+ calendrierSalle(salleId) : List&amp;lt;Reservation&amp;gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=15;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p2_cal_service">
+          <mxGeometry x="12" y="95" width="476" height="63" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_stat_service" value="StatistiqueService" style="swimlane;html=1;startSize=40;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="730" y="700" width="510" height="263" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_stat_service_attrs" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;- reservations : ReservationRepository&lt;br&gt;- salles : SalleRepository&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=15;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p2_stat_service">
+          <mxGeometry x="12" y="49" width="486" height="62" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_stat_service_div" value="" style="shape=rect;strokeColor=none;fillColor=#111111;" vertex="1" parent="p2_stat_service">
+          <mxGeometry x="0" y="113" width="510" height="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_stat_service_ops" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;+ calculerTauxOccupation(salleId, periode) : double&lt;br&gt;+ compterReservations(periode) : int&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=15;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p2_stat_service">
+          <mxGeometry x="12" y="122" width="486" height="63" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_politique" value="PolitiqueReservation" style="swimlane;html=1;startSize=40;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="700" width="455" height="255" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_politique_div" value="" style="shape=rect;strokeColor=none;fillColor=#111111;" vertex="1" parent="p2_politique">
+          <mxGeometry x="0" y="48" width="455" height="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_politique_ops" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;+ validerPeriode(creneau : Créneau) : void&lt;br&gt;+ verifierCapacite(salle, nombre) : void&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=15;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p2_politique">
+          <mxGeometry x="12" y="57" width="431" height="63" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_res_repo" value="&lt;div style=&quot;font-size:13px;font-weight:normal;font-style:italic;&quot;&gt;« interface »&lt;/div&gt;&lt;b&gt;ReservationRepository&lt;/b&gt;" style="swimlane;html=1;startSize=55;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="240" y="1120" width="645" height="260" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_res_repo_div" value="" style="shape=rect;strokeColor=none;fillColor=#111111;" vertex="1" parent="p2_res_repo">
+          <mxGeometry x="0" y="63" width="645" height="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_res_repo_ops" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;+ save(reservation : Reservation) : Reservation&lt;br&gt;+ findById(id : Long) : Reservation&lt;br&gt;+ findByEmploye(employeId) : List&amp;lt;Reservation&amp;gt;&lt;br&gt;+ findBySalleEtPeriode(salleId, debut, fin) : List&amp;lt;Reservation&amp;gt;&lt;br&gt;+ existeConflit(salleId, debut, fin, exclureId) : boolean&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=14.5;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p2_res_repo">
+          <mxGeometry x="12" y="72" width="621" height="134" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_salle_repo" value="&lt;div style=&quot;font-size:13px;font-weight:normal;font-style:italic;&quot;&gt;« interface »&lt;/div&gt;&lt;b&gt;SalleRepository&lt;/b&gt;" style="swimlane;html=1;startSize=55;horizontal=1;rounded=0;container=1;collapsible=0;strokeColor=#111111;strokeWidth=1.7;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;fontColor=#111111;fontSize=18;fontStyle=1;fontFamily=Arial;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1145" y="1120" width="615" height="235" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_salle_repo_div" value="" style="shape=rect;strokeColor=none;fillColor=#111111;" vertex="1" parent="p2_salle_repo">
+          <mxGeometry x="0" y="63" width="615" height="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_salle_repo_ops" value="&lt;div style=&quot;font-family:Arial;line-height:1.65;&quot;&gt;+ save(salle : Salle) : Salle&lt;br&gt;+ findById(id : Long) : Salle&lt;br&gt;+ findAll() : List&amp;lt;Salle&amp;gt;&lt;br&gt;+ desactiver(id : Long) : void&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=fill;strokeColor=none;fillColor=none;fontColor=#111111;fontSize=14.5;fontFamily=Arial;align=left;verticalAlign=top;spacing=0;" vertex="1" parent="p2_salle_repo">
+          <mxGeometry x="12" y="72" width="591" height="109" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2_dependency_notes" value="Flèche pointillée = dépendance UML (utilise), sans agrégation ni composition." style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Arial;fontSize=16;fontStyle=0;fontColor=#111111;align=center;verticalAlign=middle;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="1372" width="825" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

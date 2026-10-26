@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Réservations')}"></head><body>
+<header th:replace="~{fragments/layout :: navigation}"></header><div th:replace="~{fragments/layout :: flash}"></div>
+<main class="container"><div class="page-title"><div><div class="eyebrow">PLANNING</div><h1>Réservations</h1><p class="text-secondary">Toutes les réservations et leur état.</p></div><a class="btn btn-dark" th:href="@{/reservations/nouvelle}">+ Nouvelle réservation</a></div>
+<section class="panel"><div class="table-responsive"><table class="table align-middle"><thead><tr><th>ID</th><th>Salle</th><th>Employé</th><th>Début</th><th>Fin</th><th>Participants</th><th>Statut</th><th>Actions</th></tr></thead>
+<tbody><tr th:each="r:${reservations}"><td th:text="${r.id}"></td><td th:text="${r.creneau.salle.nom}"></td><td th:text="${r.employe.nom}"></td>
+<td th:text="${#temporals.format(r.creneau.dateDebut,'dd/MM/yyyy HH:mm')}"></td><td th:text="${#temporals.format(r.creneau.dateFin,'dd/MM/yyyy HH:mm')}"></td>
+<td th:text="${r.nombreParticipants}"></td><td><span class="pill" th:text="${r.statut}"></span></td>
+<td class="text-nowrap"><div th:if="${r.statut.name()!='ANNULEE'}" class="d-flex gap-2">
+<a class="btn btn-sm btn-outline-dark" th:href="@{/reservations/{id}/modifier(id=${r.id})}">Modifier</a>
+<form method="post" th:action="@{/reservations/{id}/annuler(id=${r.id})}" onsubmit="return confirm('Annuler cette réservation ?')"><button type="submit" class="btn btn-sm btn-outline-danger">Annuler</button></form>
+</div><span th:if="${r.statut.name()=='ANNULEE'}" class="text-muted">—</span></td></tr>
+<tr th:if="${#lists.isEmpty(reservations)}"><td colspan="8">Aucune réservation.</td></tr>
+</tbody></table></div></section></main><footer th:replace="~{fragments/layout :: footer}"></footer></body></html>

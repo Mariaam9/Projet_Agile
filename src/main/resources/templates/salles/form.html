@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Éditer une salle')}"></head><body>
+<header th:replace="~{fragments/layout :: navigation}"></header>
+<main class="container narrow"><a class="simple-link" th:href="@{/salles}">← Retour aux salles</a><h1 class="mt-3 mb-3" th:text="${titre}"></h1><section class="panel">
+<form th:object="${salleForm}" method="post" th:action="${id==null} ? @{/salles} : @{/salles/{id}/modifier(id=${id})}">
+<div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}"><div th:each="e:${#fields.allErrors()}" th:text="${e}"></div></div>
+<div class="mb-3"><label class="form-label" for="nom">Nom</label><input class="form-control" id="nom" th:field="*{nom}" required></div>
+<div class="mb-3"><label class="form-label" for="cap">Capacité</label><input class="form-control" type="number" min="1" id="cap" th:field="*{capacite}" required></div>
+<div class="mb-3"><label class="form-label" for="loc">Localisation</label><input class="form-control" id="loc" th:field="*{localisation}" required></div>
+<div class="mb-3"><label class="form-label" for="statut">État</label><select class="form-select" id="statut" th:field="*{statut}"><option th:each="s:${statuts}" th:value="${s}" th:text="${s}"></option></select></div>
+<div class="mb-4"><label class="form-label" for="resp">Responsable (facultatif)</label><select class="form-select" id="resp" th:field="*{responsableId}"><option value="">Aucun</option><option th:each="r:${responsables}" th:value="${r.id}" th:text="${r.nom}"></option></select></div>
+<button class="btn btn-dark" type="submit">Enregistrer</button>
+</form></section></main><footer th:replace="~{fragments/layout :: footer}"></footer></body></html>

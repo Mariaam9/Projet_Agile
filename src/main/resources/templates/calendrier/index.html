@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Calendrier')}"></head><body>
+<header th:replace="~{fragments/layout :: navigation}"></header>
+<main class="container"><div class="page-title"><div><div class="eyebrow">VUE MENSUELLE</div><h1>Calendrier</h1><p class="text-secondary">Réservations confirmées regroupées par jour de début.</p></div>
+<div class="d-flex align-items-center gap-2"><a class="btn btn-outline-dark" th:href="@{/calendrier(mois=${moisPrecedent})}">←</a><strong th:text="${mois}"></strong><a class="btn btn-outline-dark" th:href="@{/calendrier(mois=${moisSuivant})}">→</a></div></div>
+<section class="panel"><div th:if="${jours.isEmpty()}" class="empty-state">Aucune réservation confirmée durant ce mois.</div>
+<div th:each="item:${jours}" class="date-group"><h2 class="h5" th:text="${#temporals.format(item.key,'EEEE dd MMMM yyyy')}"></h2>
+<div class="row g-2"><div th:each="r:${item.value}" class="col-md-6"><div class="calendar-entry">
+<strong th:text="${r.creneau.salle.nom}"></strong> · <span th:text="${#temporals.format(r.creneau.dateDebut,'HH:mm')}"></span>–<span th:text="${#temporals.format(r.creneau.dateFin,'HH:mm')}"></span>
+<div class="small text-secondary" th:text="|${r.motif} · ${r.employe.nom}|"></div></div></div></div></div></section>
+</main><footer th:replace="~{fragments/layout :: footer}"></footer></body></html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Statistiques')}"></head><body>
+<header th:replace="~{fragments/layout :: navigation}"></header>
+<main class="container"><div class="page-title"><div><div class="eyebrow">RAPPORT CALCULÉ</div><h1>Utilisation des salles</h1><p class="text-secondary">Occupation sur une période, calculée depuis les réservations confirmées.</p></div></div>
+<section class="panel mb-4"><form method="get" th:action="@{/statistiques}" class="row g-3 align-items-end">
+<div class="col-md-4"><label class="form-label">Début inclus</label><input class="form-control" type="date" name="debut" th:value="${debut}" required></div>
+<div class="col-md-4"><label class="form-label">Fin exclue</label><input class="form-control" type="date" name="fin" th:value="${fin}" required></div>
+<div class="col-md-4"><button class="btn btn-dark" type="submit">Calculer le rapport</button></div>
+</form></section><div th:if="${erreur}" class="alert alert-danger" th:text="${erreur}"></div>
+<section th:if="${rapports!=null}" class="panel"><h2 class="h5">Taux d'occupation</h2>
+<div class="chart-wrap"><canvas id="occupationChart" height="90" aria-label="Graphique du taux d'occupation"></canvas></div>
+<div class="table-responsive"><table class="table"><thead><tr><th>Salle</th><th>Réservations</th><th>Taux d'occupation</th></tr></thead><tbody>
+<tr th:each="r:${rapports}" class="chart-data" th:attr="data-nom=${r.salle.nom},data-taux=${r.tauxOccupation}"><td th:text="${r.salle.nom}"></td><td th:text="${r.nombreReservations}"></td><td th:text="|${r.tauxOccupation} %|"></td></tr>
+</tbody></table></div><p class="small text-muted">Formule : durée totale des réservations confirmées (plages fusionnées et tronquées à la période) / durée totale de la période × 100. Hypothèse : disponibilité 24 h/24.</p></section>
+</main><footer th:replace="~{fragments/layout :: footer}"></footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>if(typeof Chart!=='undefined'){const rows=[...document.querySelectorAll('.chart-data')];const can=document.getElementById('occupationChart');if(can)new Chart(can,{type:'bar',data:{labels:rows.map(e=>e.dataset.nom),datasets:[{label:'Taux (%)',data:rows.map(e=>Number(e.dataset.taux)),backgroundColor:'#22272f'}]},options:{scales:{y:{beginAtZero:true,max:100}},plugins:{legend:{display:false}}}});}</script>
+</body></html>

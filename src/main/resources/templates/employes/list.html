@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Employés')}"></head><body>
+<header th:replace="~{fragments/layout :: navigation}"></header>
+<main class="container"><div class="page-title"><div><div class="eyebrow">UTILISATEURS</div><h1>Employés</h1><p class="text-secondary">Les employés peuvent réserver des créneaux.</p></div></div>
+<div class="row g-4"><div class="col-lg-7"><section class="panel"><h2 class="h5">Liste des employés</h2><div class="table-responsive"><table class="table"><thead><tr><th>ID</th><th>Nom</th><th>Email</th></tr></thead><tbody><tr th:each="e:${employes}"><td th:text="${e.id}"></td><td th:text="${e.nom}"></td><td th:text="${e.email}"></td></tr></tbody></table></div></section></div>
+<div class="col-lg-5"><section class="panel"><h2 class="h5">Ajouter un employé</h2><form th:action="@{/employes}" th:object="${employe}" method="post">
+<div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}"><div th:each="e:${#fields.allErrors()}" th:text="${e}"></div></div>
+<label class="form-label" for="nom">Nom</label><input class="form-control mb-3" id="nom" th:field="*{nom}" required>
+<label class="form-label" for="email">Email</label><input type="email" class="form-control mb-3" id="email" th:field="*{email}" required>
+<button class="btn btn-dark" type="submit">Enregistrer</button></form></section></div></div>
+</main><footer th:replace="~{fragments/layout :: footer}"></footer></body></html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Disponibilités')}"></head><body>
+<header th:replace="~{fragments/layout :: navigation}"></header>
+<main class="container"><div class="page-title"><div><div class="eyebrow">RECHERCHE</div><h1>Disponibilités</h1><p class="text-secondary">Filtrez les salles par dates et capacité minimale.</p></div></div>
+<section class="panel mb-4"><form th:action="@{/disponibilites}" method="get" class="row g-3 align-items-end">
+<div class="col-lg-4"><label class="form-label" for="debut">Début</label><input type="datetime-local" class="form-control" id="debut" name="debut" th:value="${debut}" required></div>
+<div class="col-lg-4"><label class="form-label" for="fin">Fin</label><input type="datetime-local" class="form-control" id="fin" name="fin" th:value="${fin}" required></div>
+<div class="col-lg-2"><label class="form-label" for="cap">Capacité min.</label><input type="number" min="1" class="form-control" id="cap" name="capacite" th:value="${capacite}"></div>
+<div class="col-lg-2"><button class="btn btn-dark w-100" type="submit">Rechercher</button></div></form></section>
+<div th:if="${erreur}" class="alert alert-danger" th:text="${erreur}"></div>
+<section th:if="${rechercheEffectuee}" class="panel"><h2 class="h5 mb-3">Résultats : <span th:text="${#lists.size(salles)}"></span> salle(s)</h2>
+<div class="table-responsive"><table class="table"><thead><tr><th>Salle</th><th>Capacité</th><th>Localisation</th><th>Réserver</th></tr></thead><tbody>
+<tr th:each="s:${salles}"><td th:text="${s.nom}"></td><td th:text="${s.capacite}"></td><td th:text="${s.localisation}"></td><td><a class="btn btn-sm btn-dark" th:href="@{/reservations/nouvelle(salleId=${s.id})}">Choisir</a></td></tr>
+<tr th:if="${#lists.isEmpty(salles)}"><td colspan="4">Aucune salle disponible pour cette période.</td></tr></tbody></table></div>
+<p class="small text-muted mb-0">Les disponibilités sont revérifiées au moment de l'enregistrement pour éviter les conflits.</p></section>
+</main><footer th:replace="~{fragments/layout :: footer}"></footer></body></html>

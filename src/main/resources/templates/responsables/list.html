@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Responsables')}"></head><body>
+<header th:replace="~{fragments/layout :: navigation}"></header>
+<main class="container"><div class="page-title"><div><div class="eyebrow">GESTION</div><h1>Responsables</h1><p class="text-secondary">Chaque salle peut être rattachée à zéro ou un responsable.</p></div></div>
+<div class="row g-3"><div class="col-lg-7"><section class="panel"><table class="table"><thead><tr><th>ID</th><th>Nom</th></tr></thead><tbody><tr th:each="r:${responsables}"><td th:text="${r.id}"></td><td th:text="${r.nom}"></td></tr></tbody></table></section></div>
+<div class="col-lg-5"><section class="panel"><h2 class="h5">Créer un responsable</h2><form method="post" th:action="@{/responsables}"><label class="form-label" for="nom">Nom</label><input id="nom" name="nom" class="form-control mb-3" required maxlength="100"><button class="btn btn-dark">Ajouter</button></form></section></div></div>
+</main><footer th:replace="~{fragments/layout :: footer}"></footer></body></html>

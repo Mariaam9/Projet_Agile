@@ -1,0 +1,28 @@
+:root { --ink:#252b32; --muted:#646c75; --line:#d9dde2; --paper:#f6f7f8; }
+* { box-sizing: border-box; }
+body { color:var(--ink); background:var(--paper); font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; min-height:100vh; }
+a { text-decoration:none; } a:hover { text-decoration:underline; }
+.site-header { background:white; border-bottom:1px solid var(--line); }
+.navbar-brand { letter-spacing:-.5px; font-size:1.3rem; }
+.nav-link { font-size:.9rem; color:var(--muted); }
+.page-title { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:22px; }
+h1 { font-size:clamp(1.7rem,3.4vw,2.5rem); font-weight:760; letter-spacing:-.04em; }
+h2 { letter-spacing:-.02em; }
+.eyebrow { color:#737a83; font-size:.72rem; font-weight:750; letter-spacing:.16em; margin-bottom:10px; }
+.hero { border:1px solid var(--line); background:#fff; border-radius:14px; padding:clamp(22px,5vw,56px); }
+.hero h1 { max-width:800px; font-size:clamp(2.1rem,4vw,3.4rem); }
+.hero .lead { max-width:650px; font-size:1.1rem; }
+.panel { background:white; border:1px solid var(--line); border-radius:12px; padding:22px; box-shadow:0 2px 12px rgba(10,20,30,.025); }
+.stat-card { background:white; border:1px solid var(--line); padding:23px; border-radius:12px; color:var(--muted); }
+.stat-card strong { display:block; font-size:2.3rem; color:var(--ink); letter-spacing:-.04em; margin-top:5px; }
+.pill { padding:4px 9px; border-radius:30px; font-size:.77rem; font-weight:650; background:#eff1f3; border:1px solid var(--line); display:inline-block; }
+.table thead th { background:#fafbfc; color:#686f79; text-transform:uppercase; letter-spacing:.05em; font-weight:650; font-size:.75rem; }
+.table> :not(caption)>*>* { padding:.85rem .6rem; }
+.narrow { max-width:790px; }
+.simple-link { color:#282e35; font-weight:600; }
+.calendar-entry { background:#f6f7f8; border:1px solid var(--line); border-radius:8px; padding:13px 16px; }
+.date-group { padding:18px 0; border-bottom:1px solid var(--line); }
+.date-group:last-child { border:0; }
+.empty-state { text-align:center; padding:55px 10px; color:var(--muted); }
+.chart-wrap { max-height:350px; margin:20px 0; }
+@media(max-width:767px){.panel { padding:16px; } .hero { padding:23px; }}
